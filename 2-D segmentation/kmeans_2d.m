@@ -7,7 +7,7 @@ dice_sum = 0;
 sensitivity_sum = 0;
 specificity_sum = 0;
 
-for w = 1:10
+for w = 1:6
 
     im = images(:,:,w);
     t = images(:,:,w);
@@ -127,8 +127,8 @@ for w = 1:10
         temp_jac = temp_jac + jac_similarity(p);
         temp_dice = temp_dice + dice_similarity(p);
     end
-    temp_jac = temp_jac / 10;
-    temp_dice = temp_dice / 10;
+    temp_jac = temp_jac / 6;
+    temp_dice = temp_dice / 6;
     jac_sum = jac_sum + temp_jac;
     dice_sum = dice_sum + temp_dice;
     cp = classperf(double(la), double(L));
@@ -137,7 +137,7 @@ for w = 1:10
 end
 
 
-sensitivity = sensitivity_sum / 10
-specificity = specificity_sum / 10
-final_jac = jac_sum / 10
-final_dice = dice_sum / 10
+sensitivity = sensitivity_sum / 6
+specificity = specificity_sum / 6
+final_jac = jac_sum / 6
+final_dice = dice_sum / 6
